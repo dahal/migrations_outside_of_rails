@@ -40,6 +40,11 @@ namespace :db do
     ActiveRecord::SchemaDumper.dump
   end
 
+  desc "Generate Timestamp String"
+  task :timestamp do
+    puts Time.now.utc.strftime("%Y%m%d%H%M%S")
+  end
+
 end
 
 

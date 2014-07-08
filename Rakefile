@@ -34,6 +34,12 @@ namespace :db do
   task :version => :configure_connection do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
   end
+
+  desc "Dump the current schema"
+  task :schema => :configure_connection do
+    ActiveRecord::SchemaDumper.dump
+  end
+
 end
 
 
